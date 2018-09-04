@@ -1,0 +1,30 @@
+﻿@model IEnumerable<FinalAssessmentPart2.DAL.Customer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Customer View</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+    </tr>
+}
+
+</table>

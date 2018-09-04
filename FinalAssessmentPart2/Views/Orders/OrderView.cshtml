@@ -1,0 +1,44 @@
+﻿@model IEnumerable<FinalAssessmentPart2.DAL.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Order View</h2>
+
+@using (Html.BeginForm())
+{
+<p>
+    Find by ship city: @Html.TextBox("searchString")
+    <input type="submit" value="Search">
+</p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShipCity)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShipCity)
+        </td>
+    </tr>
+}
+
+</table>
